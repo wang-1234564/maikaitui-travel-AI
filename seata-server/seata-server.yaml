@@ -1,0 +1,76 @@
+# ===========================================================
+# Seata Server & Client 共享配置 (YAML 格式)
+# 推送到 Nacos: DataId=seata-server.yaml, Group=SEATA_GROUP
+# ===========================================================
+
+# ----- 存储模式 (Server 用) -----
+store:
+  mode: db
+  lock:
+    mode: db
+  session:
+    mode: db
+  db:
+    dbType: mysql
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/seata?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    user: root
+    password: "123456"
+    minConn: 5
+    maxConn: 100
+    globalTable: global_table
+    branchTable: branch_table
+    lockTable: lock_table
+    distributedLockTable: distributed_lock
+    queryLimit: 1000
+    maxWait: 5000
+
+# ----- 事务分组映射 (Client 用) -----
+service:
+  vgroupMapping:
+    maikaitui_tx_group: default
+  default:
+    grouplist: 127.0.0.1:8091
+  enableDegrade: false
+  disableGlobalTransaction: false
+
+# ----- 传输配置 -----
+transport:
+  type: TCP
+  server: NIO
+  heartbeat: true
+  enableTmClientBatchSendRequest: false
+  enableRmClientBatchSendRequest: true
+  rpcRmRequestTimeout: 30000
+  rpcTmRequestTimeout: 30000
+  serialization: seata
+  compressor: none
+
+# ----- AT 模式客户端配置 -----
+client:
+  rm:
+    asyncCommitBufferLimit: 10000
+    lock:
+      retryInterval: 10
+      retryTimes: 30
+    reportRetryCount: 5
+    tableMetaCheckEnable: true
+    tableMetaCheckerInterval: 60000
+    sqlParserType: druid
+  tm:
+    commitRetryCount: 5
+    rollbackRetryCount: 5
+    defaultGlobalTransactionTimeout: 30000
+    degradeCheck: false
+    degradeCheckAllowTimes: 10
+  undo:
+    dataValidation: true
+    logSerialization: jackson
+    onlyCareUpdateColumns: true
+    compress:
+      enable: true
+      type: zip
+
+# ----- 安全 -----
+security:
+  secretKey: maikaitui-seata-key-2024

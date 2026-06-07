@@ -1,0 +1,110 @@
+// 与 maikaitui-web global.scss 保持一致
+$primary: #1f8f3a;
+$primary-dark: #126c2a;
+$primary-light: #46b65e;
+$secondary: #1fb5a7;
+$secondary-dark: #118b80;
+$accent: #f5b84b;
+$accent-dark: #d99512;
+$dark: #14251b;
+$dark-secondary: #213529;
+$dark-tertiary: #395744;
+$bg-page: #F6F8F4;
+$bg-secondary: #EEF5ED;
+$bg-card: #FFFFFF;
+$text-primary: #1f2d24;
+$text-secondary: #66756c;
+$text-muted: #a9b5ad;
+$white: #FFFFFF;
+
+$gradient-hero: linear-gradient(135deg, #4db761 0%, #1f8f3a 48%, #88c65a 100%);
+$gradient-brand: linear-gradient(135deg, $primary 0%, $primary-light 100%);
+$gradient-brand-accent: linear-gradient(135deg, $primary 0%, $accent 100%);
+$gradient-text-gold: linear-gradient(135deg, $accent 0%, #FEE140 100%);
+$gradient-ai: linear-gradient(135deg, #1fb5a7 0%, #126c2a 100%);
+
+$radius-sm: 12rpx;
+$radius-md: 16rpx;
+$radius-lg: 24rpx;
+$radius-xl: 32rpx;
+$shadow-card: 0 10rpx 34rpx rgba(26, 64, 38, 0.08);
+$shadow-card-hover: 0 18rpx 52rpx rgba(26, 64, 38, 0.13);
+$shadow-primary: 0 10rpx 30rpx rgba(31, 143, 58, 0.28);
+
+// 分类卡片渐变（与 web Home.vue 一致）
+$category-gradients: (
+  linear-gradient(135deg, #63bd62, #d8efc6),
+  linear-gradient(135deg, #f5b84b, #fff1bf),
+  linear-gradient(135deg, #1fb5a7, #c5f3ee),
+  linear-gradient(135deg, #7fb66f, #f3f7dd),
+  linear-gradient(135deg, #55a86a, #d7edd8),
+  linear-gradient(135deg, #70b8c0, #e0f5f3)
+);
+
+@function category-gradient($i) {
+  $list: $category-gradients;
+  @return nth($list, ($i % length($list)) + 1);
+}
+
+@mixin card {
+  background: $bg-card;
+  border-radius: $radius-md;
+  box-shadow: $shadow-card;
+}
+
+@mixin card-glass {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: $radius-md;
+  border: 1rpx solid rgba(255, 255, 255, 0.6);
+  box-shadow: $shadow-card;
+}
+
+@mixin hero-bg {
+  background: $gradient-hero;
+  background-size: 200% 200%;
+}
+
+@mixin btn-primary {
+  background: $gradient-brand;
+  color: $white;
+  border: none;
+  border-radius: 999rpx;
+  font-weight: 600;
+  box-shadow: $shadow-primary;
+}
+
+@mixin btn-secondary {
+  background: transparent;
+  color: $primary;
+  border: 2rpx solid $primary;
+  border-radius: 999rpx;
+  font-weight: 600;
+}
+
+@mixin section-title {
+  font-size: 34rpx;
+  font-weight: 700;
+  color: $dark;
+  text-align: center;
+  position: relative;
+  padding-bottom: 20rpx;
+  &::after {
+    content: '';
+    display: block;
+    width: 60rpx;
+    height: 6rpx;
+    background: linear-gradient(90deg, $primary, $accent);
+    margin: 12rpx auto 0;
+    border-radius: 4rpx;
+  }
+}
+
+@mixin gradient-text {
+  background: $gradient-brand-accent;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@mixin overlay-dark {
+  background: linear-gradient(180deg, rgba(26, 26, 46, 0.75) 0%, rgba(26, 26, 46, 0.45) 50%, rgba(26, 26, 46, 0.7) 100%);
+}

@@ -1,0 +1,49 @@
+spring:
+  ai:
+    openai:
+      base-url: https://api.deepseek.com
+      api-key: sk-64f0a37118414bde8acebdcdb7e61bef
+      chat:
+        options:
+          model: deepseek-v4-pro
+  data:
+    mongodb:
+      host: 127.0.0.1
+      port: 27017
+      database: maikaitui_ai
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/maikaitui?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    database: 1
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      id-type: assign_id
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+# XXL-JOB 配置
+xxl:
+  job:
+    admin:
+      addresses: http://127.0.0.1:8082/xxl-job-admin
+      timeout: 3
+    executor:
+      enabled: true
+      appname: maikaitui-ai
+      ip: 127.0.0.1
+      port: 9997
+      logpath: /data/applogs/xxl-job/maikaitui-ai
+      logretentiondays: 30
+    accessToken: default_token

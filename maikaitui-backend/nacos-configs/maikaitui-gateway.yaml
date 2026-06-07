@@ -1,0 +1,34 @@
+spring:
+  cloud:
+    gateway:
+      httpclient:
+        connect-timeout: 10000
+        response-timeout: 300s
+      routes:
+        - id: maikaitui-auth
+          uri: lb://maikaitui-auth
+          predicates:
+            - Path=/api/auth/**
+        - id: maikaitui-system
+          uri: lb://maikaitui-system
+          predicates:
+            - Path=/api/system/**
+        - id: maikaitui-tourism
+          uri: lb://maikaitui-tourism
+          predicates:
+            - Path=/api/tourism/**
+        - id: maikaitui-file
+          uri: lb://maikaitui-file
+          predicates:
+            - Path=/api/file/**
+        - id: maikaitui-ai
+          uri: lb://maikaitui-ai
+          predicates:
+            - Path=/api/ai/**
+        - id: maikaitui-admin-ai
+          uri: lb://maikaitui-ai
+          predicates:
+            - Path=/api/admin/ai/**
+jwt:
+  secret: bWFpa2FpdHVpLWp3dC1zZWNyZXQta2V5LTIwMjQtdHJhdmVsLXBsYXRmb3JtLXN1cGVyLXNlY3VyZQ
+  expiration: 86400000

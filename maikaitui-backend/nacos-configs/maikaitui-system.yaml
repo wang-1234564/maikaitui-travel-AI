@@ -1,0 +1,39 @@
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/maikaitui?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    database: 0
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      id-type: assign_id
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+jwt:
+  secret: maikaitui-jwt-secret-key-2024-travel-platform-super-secure
+  expiration: 86400000
+
+# XXL-JOB 配置
+xxl:
+  job:
+    admin:
+      addresses: http://127.0.0.1:8082/xxl-job-admin
+      timeout: 3
+    executor:
+      enabled: true
+      appname: maikaitui-system
+      ip: 127.0.0.1
+      port: 9998
+      logpath: /data/applogs/xxl-job/maikaitui-system
+      logretentiondays: 30
+    accessToken: default_token

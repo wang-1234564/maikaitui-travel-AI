@@ -1,0 +1,120 @@
+{
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^u-(.*)": "@/components/u-$1/u-$1.vue"
+    }
+  },
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "迈开腿",
+        "navigationBarBackgroundColor": "#1f8f3a",
+        "navigationBarTextStyle": "white",
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/attraction/list",
+      "style": {
+        "navigationBarTitleText": "探索景点",
+        "navigationBarBackgroundColor": "#1f8f3a",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/attraction/detail",
+      "style": {
+        "navigationBarTitleText": "景点详情",
+        "navigationBarBackgroundColor": "#1f8f3a",
+        "navigationBarTextStyle": "white",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/user/index",
+      "style": {
+        "navigationBarTitleText": "我的",
+        "navigationBarBackgroundColor": "#1f8f3a",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/favorites/index",
+      "style": {
+        "navigationBarTitleText": "我的收藏",
+        "navigationBarBackgroundColor": "#1f8f3a",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/orders/index",
+      "style": {
+        "navigationBarTitleText": "我的订单",
+        "navigationBarBackgroundColor": "#1f8f3a",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/ai/index",
+      "style": {
+        "navigationBarTitleText": "AI 旅行助手",
+        "navigationBarBackgroundColor": "#1fb5a7",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/login/index",
+      "style": {
+        "navigationBarTitleText": "登录",
+        "navigationStyle": "custom"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "迈开腿",
+    "navigationBarBackgroundColor": "#1f8f3a",
+    "backgroundColor": "#F8F9FA"
+  },
+  "tabBar": {
+    "color": "#B2BEC3",
+    "selectedColor": "#1f8f3a",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/tabbar/home-line.png",
+        "selectedIconPath": "static/tabbar/home-line-active.png"
+      },
+      {
+        "pagePath": "pages/attraction/list",
+        "text": "景区",
+        "iconPath": "static/tabbar/attraction-line.png",
+        "selectedIconPath": "static/tabbar/attraction-line-active.png"
+      },
+      {
+        "pagePath": "pages/ai/index",
+        "text": "发现",
+        "iconPath": "static/tabbar/discover-line.png",
+        "selectedIconPath": "static/tabbar/discover-line-active.png"
+      },
+      {
+        "pagePath": "pages/orders/index",
+        "text": "行程",
+        "iconPath": "static/tabbar/trip-line.png",
+        "selectedIconPath": "static/tabbar/trip-line-active.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "static/tabbar/user-line.png",
+        "selectedIconPath": "static/tabbar/user-line-active.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <title>迈开腿 - 后台管理系统</title>
+</head>
+<body>
+  <div id="app">
+    <div class="app-loading">
+      <div class="app-loading-spinner">
+        <svg class="circular" viewBox="25 25 50 50">
+          <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+        </svg>
+      </div>
+      <p>加载中...</p>
+    </div>
+  </div>
+  <style>
+    .app-loading { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background: #f0f2f5; }
+    .app-loading-spinner { width: 50px; height: 50px; animation: rotate 2s linear infinite; }
+    .circular { width: 100%; height: 100%; }
+    .path { stroke: #409eff; stroke-linecap: round; animation: dash 1.5s ease-in-out infinite; }
+    @keyframes rotate { 100% { transform: rotate(360deg); } }
+    @keyframes dash { 0% { stroke-dasharray: 1, 150; stroke-dashoffset: 0; } 50% { stroke-dasharray: 90, 150; stroke-dashoffset: -35; } 100% { stroke-dasharray: 90, 150; stroke-dashoffset: -124; } }
+    .app-loading p { margin-top: 16px; color: #909399; font-size: 14px; }
+  </style>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

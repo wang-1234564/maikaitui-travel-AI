@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1260" viewBox="0 0 900 1260">
+  <defs>
+    <linearGradient id="leftHeader" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#a8c4ea"/>
+      <stop offset="100%" stop-color="#d8e7fb"/>
+    </linearGradient>
+    <linearGradient id="rightHeader" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#dcefc0"/>
+      <stop offset="100%" stop-color="#c4e59b"/>
+    </linearGradient>
+    <linearGradient id="nodeBg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fff9e8"/>
+      <stop offset="100%" stop-color="#fff2c8"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#222"/>
+    </marker>
+    <style>
+      text { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; fill: #222; }
+      .title { font-size: 28px; font-weight: 700; }
+      .lane-title { font-size: 18px; font-weight: 700; }
+      .node-text { font-size: 15px; font-weight: 600; }
+      .small-text { font-size: 14px; font-weight: 600; }
+      .outer { fill: #ffffff; stroke: #333; stroke-width: 2; }
+      .header { stroke: #555; stroke-width: 1.5; }
+      .divider { stroke: #333; stroke-width: 2; }
+      .node { fill: url(#nodeBg); stroke: #c8a23b; stroke-width: 2; }
+      .arrow { stroke: #222; stroke-width: 2.2; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect x="10" y="10" width="880" height="1240" class="outer"/>
+  <text x="450" y="34" text-anchor="middle" class="title">业务场景四：游客发表评论 — UML活动图</text>
+
+  <rect x="10" y="52" width="385" height="32" fill="url(#leftHeader)" class="header"/>
+  <rect x="395" y="52" width="495" height="32" fill="url(#rightHeader)" class="header"/>
+  <text x="202" y="74" text-anchor="middle" class="lane-title">游客（小刘）</text>
+  <text x="642" y="74" text-anchor="middle" class="lane-title">系统（平台 / 管理员）</text>
+
+  <line x1="395" y1="52" x2="395" y2="1250" class="divider"/>
+
+  <circle cx="202" cy="105" r="13" fill="#000"/>
+
+  <rect x="95" y="145" width="214" height="56" rx="14" ry="14" class="node"/>
+  <text x="202" y="178" text-anchor="middle" class="node-text">打开“我的订单”</text>
+  <text x="202" y="196" text-anchor="middle" class="node-text">找到已完成订单</text>
+
+  <rect x="505" y="150" width="218" height="50" rx="14" ry="14" class="node"/>
+  <text x="614" y="180" text-anchor="middle" class="node-text">展示已完成订单列表</text>
+
+  <rect x="95" y="250" width="214" height="58" rx="14" ry="14" class="node"/>
+  <text x="202" y="284" text-anchor="middle" class="node-text">进入景区详情页</text>
+
+  <rect x="505" y="254" width="218" height="50" rx="14" ry="14" class="node"/>
+  <text x="614" y="284" text-anchor="middle" class="node-text">展示景区详情信息</text>
+
+  <rect x="95" y="360" width="214" height="58" rx="14" ry="14" class="node"/>
+  <text x="202" y="394" text-anchor="middle" class="node-text">点击“发表评论”</text>
+
+  <rect x="505" y="364" width="218" height="50" rx="14" ry="14" class="node"/>
+  <text x="614" y="394" text-anchor="middle" class="node-text">打开评论填写界面</text>
+
+  <rect x="78" y="470" width="248" height="108" rx="14" ry="14" class="node"/>
+  <text x="202" y="500" text-anchor="middle" class="node-text">填写评论内容</text>
+  <text x="202" y="528" text-anchor="middle" class="small-text">评分：5星</text>
+  <text x="202" y="552" text-anchor="middle" class="small-text">评论：“景色优美，</text>
+  <text x="202" y="574" text-anchor="middle" class="small-text">非常值得游玩。”</text>
+
+  <rect x="95" y="628" width="214" height="58" rx="14" ry="14" class="node"/>
+  <text x="202" y="662" text-anchor="middle" class="node-text">点击提交评论</text>
+
+  <rect x="488" y="610" width="252" height="96" rx="14" ry="14" class="node"/>
+  <text x="614" y="640" text-anchor="middle" class="node-text">保存评论信息</text>
+  <text x="614" y="666" text-anchor="middle" class="small-text">评论状态设为“待审核”</text>
+  <text x="614" y="690" text-anchor="middle" class="small-text">提示提交成功</text>
+
+  <rect x="95" y="740" width="214" height="58" rx="14" ry="14" class="node"/>
+  <text x="202" y="774" text-anchor="middle" class="node-text">等待评论审核结果</text>
+
+  <rect x="488" y="740" width="252" height="58" rx="14" ry="14" class="node"/>
+  <text x="614" y="774" text-anchor="middle" class="node-text">管理员审核评论内容</text>
+
+  <rect x="488" y="848" width="252" height="96" rx="14" ry="14" class="node"/>
+  <text x="614" y="878" text-anchor="middle" class="node-text">审核通过</text>
+  <text x="614" y="904" text-anchor="middle" class="small-text">更新评论状态为“已通过”</text>
+  <text x="614" y="928" text-anchor="middle" class="small-text">允许前台展示</text>
+
+  <rect x="95" y="878" width="214" height="58" rx="14" ry="14" class="node"/>
+  <text x="202" y="912" text-anchor="middle" class="node-text">再次查看景区评论区</text>
+
+  <rect x="488" y="992" width="252" height="58" rx="14" ry="14" class="node"/>
+  <text x="614" y="1026" text-anchor="middle" class="node-text">在景区评论区显示该评论</text>
+
+  <rect x="95" y="992" width="214" height="58" rx="14" ry="14" class="node"/>
+  <text x="202" y="1026" text-anchor="middle" class="node-text">看到评论展示成功</text>
+
+  <circle cx="202" cy="1135" r="18" fill="#fff" stroke="#000" stroke-width="3"/>
+  <circle cx="202" cy="1135" r="10" fill="#000"/>
+
+  <path d="M202 118 L202 145" class="arrow"/>
+  <path d="M309 173 L505 173" class="arrow"/>
+  <path d="M202 201 L202 250" class="arrow"/>
+  <path d="M309 279 L505 279" class="arrow"/>
+  <path d="M202 308 L202 360" class="arrow"/>
+  <path d="M309 389 L505 389" class="arrow"/>
+  <path d="M202 418 L202 470" class="arrow"/>
+  <path d="M202 578 L202 628" class="arrow"/>
+  <path d="M309 657 L488 657" class="arrow"/>
+  <path d="M202 686 L202 740" class="arrow"/>
+  <path d="M309 769 L488 769" class="arrow"/>
+  <path d="M614 798 L614 848" class="arrow"/>
+  <path d="M309 907 L488 896" class="arrow"/>
+  <path d="M614 944 L614 992" class="arrow"/>
+  <path d="M488 1021 L309 1021" class="arrow"/>
+  <path d="M202 1050 L202 1117" class="arrow"/>
+</svg>

@@ -1,0 +1,28 @@
+server:
+  port: 8500
+spring:
+  application:
+    name: maikaitui-ai
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      username: nacos
+      password: nacos
+      config:
+        file-extension: yaml
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8858
+        port: 8723
+      eager: true
+  config:
+    import: optional:nacos:${spring.application.name}.yaml
+  data:
+    mongodb:
+      host: 127.0.0.1
+      port: 27017
+      database: maikaitui_ai
+  ai:
+    openai:
+      connect-timeout: 30s
+      read-timeout: 300s

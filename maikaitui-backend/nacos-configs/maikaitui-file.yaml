@@ -1,0 +1,6 @@
+oss:
+  endpoint: oss-cn-hangzhou.aliyuncs.com
+  access-key-id: LTAI5t5wM7eGvuvUouaVUQcK
+  access-key-secret: qwIzwhCoWya0VtcPNrOTgHtvjVHBPD
+  bucket-name: scenicc
+  allowed-extensions: jpg,jpeg,png,gif,bmp,webp,mp4,avi,doc,docx,pdf

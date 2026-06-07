@@ -1,0 +1,53 @@
+server:
+  port: 7091
+
+spring:
+  application:
+    name: seata-server
+  main:
+    web-application-type: servlet
+    allow-bean-definition-overriding: true
+
+logging:
+  config: classpath:logback-spring.xml
+  file:
+    path: ./logs
+
+seata:
+  config:
+    type: nacos
+    nacos:
+      server-addr: 127.0.0.1:8848
+      namespace: ""
+      group: SEATA_GROUP
+      username: nacos
+      password: nacos
+      data-id: seata-server.yaml
+  registry:
+    type: nacos
+    nacos:
+      application: seata-server
+      server-addr: 127.0.0.1:8848
+      namespace: ""
+      group: SEATA_GROUP
+      username: nacos
+      password: nacos
+  store:
+    mode: db
+    db:
+      datasource: hikari
+      db-type: mysql
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/seata?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+      user: root
+      password: "123456"
+      min-conn: 5
+      max-conn: 100
+      global-table: global_table
+      branch-table: branch_table
+      lock-table: lock_table
+      distributed-lock-table: distributed_lock
+      query-limit: 1000
+      max-wait: 5000
+  security:
+    secretKey: maikaitui-seata-key-2024

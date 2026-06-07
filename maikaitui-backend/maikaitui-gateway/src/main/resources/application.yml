@@ -1,0 +1,19 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: maikaitui-gateway
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      username: nacos
+      password: nacos
+      config:
+        file-extension: yaml
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8858
+        port: 8719
+      eager: true
+  config:
+    import: optional:nacos:${spring.application.name}.yaml
